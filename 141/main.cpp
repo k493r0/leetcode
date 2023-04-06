@@ -14,7 +14,7 @@ public:
         }
 
         // Floyd's cycle-finding algorithm
-        ListNode *slow, *fast = head;
+        ListNode *slow = head, *fast = head;
 
         while (fast != NULL && fast->next != NULL) {
             slow = slow->next; // increment slow by 1
@@ -23,6 +23,8 @@ public:
                 return true;
             }
         }
+
+        return false;
     }
 };
 
